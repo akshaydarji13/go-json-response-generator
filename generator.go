@@ -2,7 +2,6 @@ package generator
 
 import (
 	"encoding/json"
-	"log"
 )
 
 // Response is the struct for response generator data
@@ -44,7 +43,6 @@ func ResponseGenerator(status bool, message string, data ...interface{}) ([]byte
 	// generatedResponse, err := newResponse.jsonMarsheler()
 	generatedResponse, err := json.Marshal(newResponse)
 	if err != nil {
-		log.Fatal("response generator json conversion error: ", err)
 		return nil, err
 	}
 
